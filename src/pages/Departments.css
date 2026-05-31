@@ -1,0 +1,273 @@
+.index-departments-hero {
+
+  height: 60vh;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1612994000819-52bf05f1ae98");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.index-departments-overlay {
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(20,12,8,.95),
+      rgba(20,12,8,.45),
+      rgba(20,12,8,.92)
+    );
+}
+
+.index-departments-hero-content {
+
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  max-width: 800px;
+}
+
+.index-departments-subtitle {
+
+  color: #b89b7a;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.index-departments-hero h1 {
+
+  font-size: 4rem;
+
+  margin: 20px 0;
+}
+
+/* Stats Strip */
+
+.index-departments-stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 30px;
+
+  padding: 80px;
+
+  background: #0D0907;
+}
+
+.dept-stat {
+
+  text-align: center;
+
+  border-top:
+    1px solid rgba(184,155,122,.25);
+
+  border-bottom:
+    1px solid rgba(184,155,122,.25);
+
+  padding: 30px;
+}
+
+.dept-stat h3 {
+
+  color: #b89b7a;
+
+  font-size: 3rem;
+}
+
+/* Tradition */
+.aurelian-tradition {
+
+  position: relative;
+
+  min-height: 55vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1768741876647-0c39850cdc33");
+
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+.tradition-overlay {
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(20,12,8,.92),
+      rgba(20,12,8,.60),
+      rgba(20,12,8,.92)
+    );
+}
+
+.tradition-content {
+
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+
+  padding: 0 2rem;
+}
+
+.tradition-subtitle {
+
+  color: #b89b7a;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  font-size: .85rem;
+}
+
+.tradition-content h2 {
+
+  font-size: 3.5rem;
+
+  margin: 20px 0;
+
+  color: #f5f0e6;
+}
+
+.tradition-content p {
+
+  color: rgba(245,240,230,.82);
+
+  line-height: 1.9;
+
+  max-width: 700px;
+
+  margin: 0 auto 40px;
+}
+
+.tradition-content blockquote {
+
+  color: #d6c3a3;
+
+  font-size: 1.4rem;
+
+  font-style: italic;
+
+  border-left:
+    2px solid rgba(184,155,122,.5);
+
+  padding-left: 20px;
+
+  display: inline-block;
+}
+
+
+/* Department Grid */
+.index-departments-grid {
+
+  padding: 100px 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 35px;
+
+  background: #0D0907;
+}
+
+/* Department Cards */
+.index-department-link {
+
+  text-decoration: none;
+}
+
+.index-department-card {
+
+  background:
+    rgba(22,16,13,.55);
+
+  backdrop-filter:
+    blur(14px);
+
+  border:
+    1px solid rgba(214,195,163,.08);
+
+  border-radius: 24px;
+
+  padding: 40px;
+
+  min-height: 240px;
+
+  transition: all .4s ease;
+}
+
+.index-department-card:hover {
+
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(184,155,122,.4);
+
+  box-shadow:
+    0 25px 45px rgba(0,0,0,.35);
+}
+
+.index-department-label {
+
+  color: #b89b7a;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  font-size: .8rem;
+}
+
+.index-department-card h2 {
+
+  margin-top: 20px;
+
+  color: #f5f0e6;
+}
+
+.index-department-card p {
+
+  color: rgba(245,240,230,.75);
+
+  line-height: 1.8;
+}
+
+.index-department-arrow {
+
+  display: inline-block;
+
+  margin-top: 25px;
+
+  color: #b89b7a;
+}
