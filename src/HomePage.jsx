@@ -190,7 +190,7 @@ export default function HomePage() {
 
         <div className="featured-departments-grid">
 
-          {departments.map((dept) => (
+          {departments.slice(0, 6).map((dept) => (
 
             <Link
               to={`/departments/${dept.id}`}

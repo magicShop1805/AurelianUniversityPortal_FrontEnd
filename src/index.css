@@ -110,6 +110,10 @@ code {
   background: var(--code-bg);
 } */
 
+html{
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {

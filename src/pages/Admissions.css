@@ -1,43 +1,778 @@
-.admissions-container {
+/* .admissions-page {
+  --adm-bg: #100b08;
+  --adm-panel: #1b120d;
+  --adm-gold: #b49a70;
+  --adm-ivory: #eee4d3;
+  --adm-muted: #b8a894;
+
+  background: var(--adm-bg);
+  color: var(--adm-ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+} */
+
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+  background: transparent;
+  border-bottom: none;
+}
+
+
+/* ONLY move links */
+.navbar-links {
+  display: flex;
+  /* gap: 34px; */
+  margin-top: 0;
+}
+
+.navbar-links a {
+  /* font-family: 'Cormorant Garamond', serif; */
+  position: relative;
+
+  letter-spacing: 2px;
+  margin-left: 25px;
+  color: #d8c7ae;
+  text-decoration: none;
+  font-size: 0.92rem;
+
+  padding-bottom: 6px;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-links a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: #d6c3a3;
+  transition: width 0.35s ease;
+}
+
+.navbar-links a:hover {
+  /* margin-top: 60px; */
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.navbar-links .active {
+  color: #f5ede3;
+}
+
+.navbar-links .active::after {
+  width: 100%;
+}
+
+.index-university-brand{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.index-university-brand h1{
+  font-family: 'Cinzel', serif;
+  color: #d6c3a3;
+  margin-left: -10px;
+  /* font-size: 1.5rem; */
+}
+
+.index-brand-logo{
+  width: 80px;
+  height: 80px;
+  object-fit:contain;
+  border-radius: 50%;
+}
+.index-departments-page{
+  animation:pageReveal 1.2s ease;
+}
+
+@keyframes pageReveal{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+/*ADMISSION PAGE*/
+
+.admissions-hero {
+  /* min-height: 430px;
+  padding: 100px 24px 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  justify-content: center;
+  text-align: center; 
+  border-bottom: 1px solid #665039; */
+  background:
+    linear-gradient(
+      rgba(16, 11, 8, 0.72),
+      rgba(16, 11, 8, 0.88)
+    ),
+    url("https://images.unsplash.com/photo-1535397957853-a9b683256949?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D")
+      center 48% / cover;
 
-form {
-  width: 320px;
-}
-
-input {
+  min-height: 100vh;
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  background: #1a1a1a;
-  border: 1px solid #A99D9D;
-  color: #e5d3b3;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.admissions-eyebrow,
+.admissions-section-label {
+  /* color: var(--adm-gold);
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase; */
+
+  display: inline-block;
+  padding: 12px 26px;
+  background: rgba(15, 9, 7, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(184, 155, 122, 0.35);
+  border-radius: 999px;
+  color: #b89b7a;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 35px;
+  margin-bottom: 0px;
+}
+
+.admissions-divider {
+  /* width: 100px;
+  height: 1px;
+  margin: 24px 0;
+  background: var(--adm-gold); */
+
+  width: 200px;
+  height: 2px;
+  background: rgba(184, 155, 122, 0.8);
+  align-items: center;
+  margin: 24px auto -3px auto;
+  margin-bottom: -15px;
+}
+
+.admissions-hero h1 {
+  /* margin: 0;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: 2px; */
+  font-family: 'Cinzel', serif;
+  color: #f5ede3;
+  font-size: 4.5rem;
+  line-height: 0.95;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.admissions-intro {
+  max-width: 640px;
+  margin: 22px auto 30px;
+  color: #d4c5b2;
+  font-size: 19px;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.admissions-hero-link {
+    display: inline-flex;
+    align-items: center;
+    /* gap: 10px; */
+    margin-top: 0.5rem;
+    padding: 12px 26px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    /* font-weight: 600; */
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #d8c7ae;
+    border-radius: 999px;
+    cursor: pointer;
+    position: relative;
+    /* background: linear-gradient(rgba(15, 12, 10, 0.85), rgba(15, 12, 10, 0.85)) padding-box, linear-gradient(90deg, rgba(255, 224, 145, 0.25), rgba(212, 175, 55, 0.7), rgba(255, 224, 145, 0.25)) border-box; */
+    background: rgba(15, 9, 7, 0.60);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(184, 155, 122, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.admissions-hero-link span{
+    transition: transform 0.5s ease;
+}
+
+.admissions-hero-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
+  color: #f5ede3;
+}
+.admissions-hero-link {
+    text-decoration: none;
+}
+
+.admissions-hero-link:hover,
+.admissions-hero-link:focus,
+.admissions-hero-link:visited {
+    text-decoration: none;
+}
+
+
+/* .admissions-content {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 85px 28px;
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.admissions-copy {
+  padding-top: 20px;
+}
+
+.admissions-copy h2,
+.admissions-form-panel h2 {
+  margin: 20px 0;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.admissions-copy > p:not(.admissions-section-label) {
+  max-width: 440px;
+  color: var(--adm-muted);
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.admissions-note {
+  display: flex;
+  gap: 20px;
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid #493727;
+}
+
+.admissions-note > span {
+  color: var(--adm-gold);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 22px;
+}
+
+.admissions-note h3 {
+  margin: 0 0 7px;
+  color: var(--adm-ivory);
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.admissions-note p {
+  margin: 0;
+  color: var(--adm-muted);
+  font-size: 17px;
+}
+
+.admissions-form-panel {
+  padding: 38px;
+  background: var(--adm-panel);
+  border: 1px solid #59452f;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+.admissions-form-panel h2 {
+  font-size: 32px;
+}
+
+.admissions-form-panel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admissions-form-panel label {
+  margin: 20px 0 8px;
+  color: #d5c2a7;
+  font-size: 17px;
+}
+
+.admissions-form-panel input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  background: #100b08;
+  border: 1px solid #59452f;
+  border-radius: 0;
   outline: none;
-  font-family: inherit;
+  color: var(--adm-ivory);
+  font: inherit;
+  font-size: 17px;
+  transition: border-color 0.2s;
 }
 
-input:focus {
-  box-shadow: 0 0 5px #A99D9D;
+.admissions-form-panel input::placeholder {
+  color: #877763;
 }
 
-#adm {
-  width: 348px;
-  padding: 12px;
-  background: #5a4634;
-  border: none;
-  color: #FFFFFF;
-  font-weight: bold;
+.admissions-form-panel input:focus {
+  border-color: var(--adm-gold);
+}
+
+.admissions-form-panel button {
+  margin-top: 28px;
+  padding: 16px;
+  background: #b49a70;
+  border: 1px solid #b49a70;
+  color: #160e09;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
   cursor: pointer;
-  margin-top: 10px;
-  transition: 0.3s;
-  font-size: medium;
-  font-family: inherit;
+  transition: background 0.2s, color 0.2s;
 }
 
-#adm:hover {
-  background: #e5d3b3;
-  color: #1a1a1a;
+.admissions-form-panel button:hover:not(:disabled) {
+  background: transparent;
+  color: var(--adm-ivory);
+}
+
+.admissions-form-panel button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+
+.admissions-form-footnote {
+  margin: 22px 0 0;
+  color: #877763;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.admissions-error {
+  margin: 16px 0 0;
+  color: #e5a99b;
+  font-size: 16px;
+}
+
+.admissions-success h3 {
+  color: var(--adm-gold);
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 400;
+}
+
+.admissions-success p {
+  color: var(--adm-muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+  .admissions-hero {
+    min-height: 360px;
+    padding: 75px 20px;
+  }
+
+  .admissions-content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 55px 20px;
+  }
+
+  .admissions-form-panel {
+    padding: 25px 20px;
+  }
+
+  .admissions-eyebrow {
+    letter-spacing: 2px;
+  }
+} */
+
+/* =========================================
+   MAIN CONTENT
+   Does not modify the hero section
+   ========================================= */
+
+.admissions-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 76px);
+  width: min(1180px, 86%);
+  margin: 0 auto;
+  padding: 64px 0 90px;
+}
+
+.admissions-copy {
+  min-width: 0;
+  color: var(--adm-muted);
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.admissions-copy h2,
+.admissions-copy h3 {
+  color: var(--adm-ivory);
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.admissions-copy h2 {
+  margin: 0 0 20px;
+  font-size: clamp(23px, 2.3vw, 31px);
+}
+
+.admissions-copy h3 {
+  margin: 28px 0 10px;
+  font-size: 19px;
+}
+
+.admissions-copy p {
+  margin: 0 0 18px;
+}
+
+.admissions-note {
+  margin-top: 30px;
+  padding: 20px 22px;
+  border-left: 2px solid var(--adm-gold);
+  background: rgba(180, 154, 112, 0.06);
+  color: var(--adm-muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.admissions-note strong {
+  color: var(--adm-gold);
+  font-weight: 600;
+}
+
+/* =========================================
+   APPLICATION FORM PANEL
+   ========================================= */
+
+.admissions-form-panel {
+  min-width: 0;
+  padding: clamp(24px, 3vw, 42px);
+  background: var(--adm-panel);
+  border: 1px solid var(--adm-border);
+  border-radius: 3px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.admissions-form-panel h2 {
+  margin: 0 0 8px;
+  color: var(--adm-ivory);
+  font-family: "Cinzel", serif;
+  font-size: clamp(22px, 2.1vw, 29px);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.admissions-form-panel > p {
+  margin: 0 0 28px;
+  color: var(--adm-muted);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   FORM LAYOUT
+   ========================================= */
+
+.admissions-form-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admissions-form-panel label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--adm-ivory);
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.admissions-form-panel input,
+.admissions-form-panel select,
+.admissions-form-panel textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid var(--adm-border);
+  border-radius: 2px;
+  outline: none;
+  background: var(--adm-input-bg);
+  color: var(--adm-ivory);
+  font: inherit;
+  font-size: 17px;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admissions-form-panel input,
+.admissions-form-panel select {
+  min-height: 48px;
+}
+
+.admissions-form-panel textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.admissions-form-panel input::placeholder,
+.admissions-form-panel textarea::placeholder {
+  color: #8f7f6d;
+  opacity: 1;
+}
+
+.admissions-form-panel input:focus,
+.admissions-form-panel select:focus,
+.admissions-form-panel textarea:focus {
+  border-color: var(--adm-gold);
+  background: #17100b;
+  box-shadow: 0 0 0 2px rgba(180, 154, 112, 0.1);
+}
+
+.admissions-form-panel select {
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.admissions-form-panel input[type="date"] {
+  color-scheme: dark;
+}
+
+.admissions-form-panel input:disabled,
+.admissions-form-panel select:disabled,
+.admissions-form-panel textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* Keep long text fields comfortable to use */
+
+.admissions-form-panel textarea {
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+   ========================================= */
+
+.admissions-form-panel button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 6px;
+  padding: 14px 22px;
+  border: 1px solid var(--adm-gold);
+  border-radius: 2px;
+  background: var(--adm-gold);
+  color: var(--adm-bg);
+  font-family: "Cinzel", serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admissions-form-panel button[type="submit"]:hover:not(:disabled) {
+  background: transparent;
+  color: var(--adm-gold);
+}
+
+.admissions-form-panel button[type="submit"]:focus-visible {
+  outline: 2px solid var(--adm-ivory);
+  outline-offset: 4px;
+}
+
+.admissions-form-panel button[type="submit"]:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+/* =========================================
+   FORM FOOTNOTE AND ERROR MESSAGE
+   ========================================= */
+
+.admissions-form-footnote {
+  margin-top: 20px;
+  color: var(--adm-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.admissions-error {
+  margin: 0;
+  padding: 13px 15px;
+  border: 1px solid rgba(190, 100, 80, 0.45);
+  background: rgba(120, 42, 30, 0.15);
+  color: #e7b2a4;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   SUCCESS MESSAGE
+   ========================================= */
+
+.admissions-success {
+  padding: 30px 24px;
+  border: 1px solid var(--adm-border);
+  background: var(--adm-panel-light);
+  text-align: center;
+}
+
+.admissions-success h2 {
+  margin-bottom: 14px;
+  color: var(--adm-gold);
+}
+
+.admissions-success p {
+  color: var(--adm-muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.admissions-success strong {
+  color: var(--adm-ivory);
+}
+
+.admissions-success button {
+  margin-top: 12px;
+  padding: 12px 20px;
+  border: 1px solid var(--adm-gold);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--adm-gold);
+  font-family: "Cinzel", serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admissions-success button:hover {
+  background: var(--adm-gold);
+  color: var(--adm-bg);
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT
+   ========================================= */
+
+@media (max-width: 900px) {
+  .admissions-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+    width: min(700px, 88%);
+    padding-top: 44px;
+  }
+
+  .admissions-copy {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 6%;
+  }
+
+  .navbar-links {
+    justify-content: flex-start;
+    gap: 12px 20px;
+  }
+
+  .navbar-links a {
+    font-size: 16px;
+  }
+
+  .index-brand-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .admissions-content {
+    width: 90%;
+    gap: 28px;
+    padding: 32px 0 56px;
+  }
+
+  .admissions-form-panel {
+    padding: 22px 18px;
+  }
+
+  .admissions-form-panel form {
+    gap: 17px;
+  }
+
+  .admissions-form-panel input,
+  .admissions-form-panel select,
+  .admissions-form-panel textarea {
+    font-size: 16px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-links a,
+  .admissions-form-panel input,
+  .admissions-form-panel select,
+  .admissions-form-panel textarea,
+  .admissions-form-panel button,
+  .admissions-success button {
+    transition: none;
+  }
 }

@@ -106,6 +106,60 @@ export default function Dashboard() {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [lightMode, setLightMode] = useState(false);
+  // const [scholarLog, setScholarLog] =
+  // useState({
+
+  //     courseId: "",
+
+  //     studyHours: "",
+
+  //     notes: ""
+
+  // });
+  // const handleSubmit = async () => {
+
+  //     const student =
+  //         JSON.parse(
+  //             localStorage.getItem("student")
+  //         );
+
+  //     await axios.post(
+  //         "http://localhost:8080/scholar-log",
+  //         {
+  //             student: {
+  //                 id: student.id
+  //             },
+
+  //             course: {
+  //                 id: scholarLog.courseId
+  //             },
+
+  //             studyHours:
+  //                 scholarLog.studyHours,
+
+  //             notes:
+  //                 scholarLog.notes
+  //         }
+  //     );
+
+  // };
+  const enrolledCourses = [
+    {
+      id: 1,
+      title: "Computational Theory",
+      professor: "Prof. Evelina Voss"
+    },
+    {
+      id: 2,
+      title: "Artificial Cognition",
+      professor: "Prof. Lucien Blackwood"
+    },
+    {
+      id: 3,
+      title: "Cryptography",
+      professor: "Prof. Theodore Vale"
+    }
+  ];
 
   const performanceData = [
     { semester: "I", cgpa: 8.4 },
@@ -361,7 +415,7 @@ export default function Dashboard() {
 
           </div>
 
-          <div className="dashboard-section actions-card">
+          {/* <div className="dashboard-section actions-card">
 
             <span className="section-label">
               QUICK ACCESS
@@ -389,7 +443,63 @@ export default function Dashboard() {
 
             </div>
 
+          </div> */}
+
+          <div className="dashboard-section courses-card">
+
+            <span className="section-label">
+              CURRENT COURSES
+            </span>
+
+            <h2>Enrolled Courses</h2>
+
+            <div className="courses-list">
+
+              {enrolledCourses.map(course => (
+
+                <div
+                  key={course.id}
+                  className="course-item"
+                >
+
+                  <h3>{course.title}</h3>
+
+                  <p>{course.professor}</p>
+
+                </div>
+
+              ))}
+
+            </div>
+
           </div>
+
+          {/* <select
+              value={scholarLog.courseId}
+              onChange={(e) =>
+                  setScholarLog({
+                      ...scholarLog,
+                      courseId: e.target.value
+                  })
+              }
+          >
+
+              <option value="">
+                  Select Course
+              </option>
+
+              {courses.map(course => (
+
+                  <option
+                      key={course.id}
+                      value={course.id}
+                  >
+                      {course.title}
+                  </option>
+
+              ))}
+
+          </select> */}
 
           <div className="dashboard-section mini-widget">
             <span className="section-label">ENGAGEMENT</span>
